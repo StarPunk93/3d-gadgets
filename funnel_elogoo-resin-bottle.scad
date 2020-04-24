@@ -1,10 +1,10 @@
-bottle=3.5;
-cylinder_hole_r=1.75;
-thickness=0.2;
-height=3.2;
-support=1.5;
-support_width=0.7;
-support_len=1.5;
+bottle=35;
+cylinder_hole_r=17.5;
+thickness=2;
+height=32;
+support=15;
+support_width=7;
+support_len=15;
 top_hole=height;
 
 // Funnel
@@ -13,7 +13,7 @@ difference() {
     cylinder(h=height, r1=cylinder_hole_r - thickness, r2=top_hole - thickness,center=true, $fs=0.01, $fa=5);
     cylinder(h=height*2, r=cylinder_hole_r-thickness, center=true, $fs=0.1);
     translate([0,0,height/2])
-        cube([20,20,2],center=true);
+        cube([200,200,2],center=true);
 }
 // Foots
 
