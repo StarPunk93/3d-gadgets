@@ -35,7 +35,6 @@ translate([cylinder_hole_r,0,-height/2-support/2+thickness])
         cylinder(h=height,r1=cylinder_hole_r,r2=top_hole, center=true, $fa=5, $fs=0.01);    
 }
 
-
 difference(){
 translate([-cylinder_hole_r,0,-height/2-support/2+thickness])
     cylinder(r=thickness, h=support+thickness, center=true, $fa=5, $fs=0.01);
