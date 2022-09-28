@@ -42,7 +42,7 @@ module snap () {
 }
 
 union(){
-rotate([0, 0, 45])cupholder();
+rotate([0, 0, 135])cupholder();
 difference(){
     translate([(cupdia / 2) + ((table + 10) / 2) - thickness, 0, table / 2 + thickness / 2])tableholder();
     translate([0,0,(thickness + 1)/ 2]) cylinder(h = cupheight, center = true, d = cupdia);
