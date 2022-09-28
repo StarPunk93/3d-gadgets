@@ -36,14 +36,25 @@ cube([cupholder, cupdia, (cupheight / 10) * 8], center = true);
 module tableholder () {
 cube([table + 10, cupdia / 2, thickness], center = true);
 }
+
+module snap () {
+    translate([cupdia/5 * 3, 0 ,cupheight / 2 - thickness]) rotate([0, 75, 0]) cube([thickness, cupdia, thickness], center = true);
+}
+
 union(){
 rotate([0, 0, 45])cupholder();
 difference(){
     translate([(cupdia / 2) + ((table + 10) / 2) - thickness, 0, table / 2 + thickness / 2])tableholder();
     translate([0,0,(thickness + 1)/ 2]) cylinder(h = cupheight, center = true, d = cupdia);
+    snap();
+    translate([thickness, 0 , 0]) snap();
+    translate([thickness * 2, 0 , 0]) snap();
+    translate([thickness * 3, 0 , 0]) snap();
+    
 }
 difference(){
-    translate([(cupdia / 2) + ((table + 10) / 2) - thickness, 0, -(table / 2 + thickness / 2)]) tableholder();
+    translate([(cupdia / 2) + ((table + 10) / 2) - thickness, 0, -(table / 2 + thickness / 3 * 2)]) tableholder();
     translate([0,0,(thickness + 1)/ 2]) cylinder(h = cupheight, center = true, d = cupdia);
 }
 }
+
